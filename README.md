@@ -6,7 +6,7 @@ Learning about function programming via JS language
 เริ่มแรกเดิมทียังไม่รู้จัก FP หรือ Functional Programming จนมาจับ React JS และจำเป็นต้องใช้ Redux ในการจัดการ State
 [Redux](http://redux.js.org/) เจ้าตัวนี้เข้ามาจัดการ props, state ของ React JS ให้ดีขึ้น โดยมันจะแบ่งออกเป็น สามงานหลักๆ ได้แก่ Store, Action and Reducer รายละเอียดเพิ่มเติมหาได้ใน google หรือ [http://www.somkiat.cc/redux-for-mobile-application/](http://www.somkiat.cc/redux-for-mobile-application/) ซึ่งอธิบายได้ดี
 
-หนึ่งใน redux princicle คือ Changes are made with pure function
+หนึ่งใน redux principle คือ Changes are made with pure function
 
 ก็ไปสืบค้นข้อมูลต่อว่า pure function คืออะไร?
 
@@ -15,19 +15,23 @@ Learning about function programming via JS language
 กฏของ Reducer คือ We don't mutate the state (Reducers are just pure functions that take the previous state and an action, and return the next state. Remember to return new state objects) และ We return the previous state in the default case
 
 ดังนั้นตอนนี้ มีเรื่องที่ต้องศึกษา ดังนี้
-1. Mutate
-2. Immutate
+1. Mutable
+2. Immutable
 3. Imperative Programming
 4. Functional Programming
 5. Pure Function
+6. First class function
+7. Higher order function
 
 # สรุป
 
-## Functional Programming
-1. จำนวน Output ของ function จะสอดคล้องกับจำนวน Input เสมอ
-2. ต้องเป็น Immutate เสมอ นั่น คือ การนำ Input ของ parameter ไปใช้ใน ฟังก์ชั่น จะต้องไม่ส่งผลกระทบกับ ค่าข้อมูลต้นทาง ไม่ว่าจะเกิดการเปลี่ยนแปลงใดๆ หรือ การเปลี่ยนแปลง state ใดๆ จะต้องส่งผลลัพธ์ในฐานะ state ใหม่ แทนที่จะเขียนทับ state เก่า แล้วส่งออกไป
-3. ห้ามเป็น Mutate หรือ Mutation ซึ่งมันตรงข้ามกับ Immutate โดยสิ้นเชิง สถานะการณืสมมุติ เช่น มี Array 1 ชุด ส่งเข้าไปใน หนึ่ง function เพื่อทำการวนลูป push() การทำแบบนี้จะส่งผลถึง state ต้นทางด้วย ตัวอย่าง Array mutation [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods)
-4. Pure function คืออะไร ? เป็นผลลัพธ์ของการทำ Immutate state ฟังก์ชั่นใดก็ตามที่ทำลักษณะนี้ได้ ถือว่าเป็น Pure function ไม่มีสิ่งเจือปน ไม่ยุ่งกับ state ก่อนหน้า ไม่เปลี่ยน แต่สร้าง state ใหม่ที่เพิ่ม เติม หรือ ลดจาก state เก่า ดังนั้น Pure function จะไม่ยุ่งกับ สภาวะแวดล้อมข้างนอก ที่ก่อให้เกิด side effect ต่อตัวเอง และผู้อื่น
+## หัวใจหลักของ Functional Programming
+1. จำนวน Output ของ function จะสอดคล้องกับจำนวน Input เสมอ และต้องมีอย่างน้อย 1 parameter
+
+2. ต้องเป็น Immutable เสมอ หมายความว่า หลีกเลี่ยงการกระทำที่ส่งผลกระทบกับ state ปัจจุบัน ที่ส่งเข้ามา หรือ parameter ต้นทางที่ส่งมาจะต้องไม่มีผลกระกบ จาก operation ในฟังก์ชั่น (Redux แนะนำว่า state ปัจจุบัน เราไม่ยุ่ง แต่จะใช้ copy state และ return new state ออกไป)
+
+3. ห้าม Mutate หรือ Mutation ซึ่งมันตรงข้ามกับ Immutable โดยสิ้นเชิง สถานะการณ์สมมุติ เช่น มี Array 1 ชุด ส่งเข้าไปใน หนึ่ง function เพื่อทำการวนลูป push() การทำแบบนี้จะส่งผลถึง state ต้นทางด้วย ตัวอย่าง Array mutation [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods)
+4. Pure function คืออะไร ? เป็นผลลัพธ์ของการทำ Immutable state ฟังก์ชั่นใดก็ตามที่ทำลักษณะนี้ได้ ถือว่าเป็น Pure function ไม่มีสิ่งเจือปน ไม่ยุ่งกับ state ก่อนหน้า ไม่เปลี่ยน แต่สร้าง state ใหม่ที่เพิ่ม เติม หรือ ลดจาก state เก่า ดังนั้น Pure function จะไม่ยุ่งกับ สภาวะแวดล้อมข้างนอก ที่ก่อให้เกิด side effect ต่อตัวเอง และผู้อื่น
 5. First class function คือ feature ที่สนับสนุนให้ฟังก์ชั่น เป็นพลเมืองอันดับหนึ่ง เทียบเท่ากับ Variable ในภาษานั้นๆ ดังนั้น เราสามารถจับ function เข้าไปเป็นตัวแปรได้ เช่น `const a = function () {} or const a = () => {}`
 6. Higher order function คือ เราสามารถส่งฟังก์ชั่น เข้าไปเป็นส่วน Argument ของฟังก์ชั่นอื่นได้ และ return function ออกมา
 
