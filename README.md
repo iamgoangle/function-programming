@@ -27,7 +27,7 @@ Learning about function programming via JS language
 1. จำนวน Output ของ function จะสอดคล้องกับจำนวน Input เสมอ
 2. ต้องเป็น Immutate เสมอ นั่น คือ การนำ Input ของ parameter ไปใช้ใน ฟังก์ชั่น จะต้องไม่ส่งผลกระทบกับ ค่าข้อมูลต้นทาง ไม่ว่าจะเกิดการเปลี่ยนแปลงใดๆ หรือ การเปลี่ยนแปลง state ใดๆ จะต้องส่งผลลัพธ์ในฐานะ state ใหม่ แทนที่จะเขียนทับ state เก่า แล้วส่งออกไป
 3. ห้ามเป็น Mutate หรือ Mutation ซึ่งมันตรงข้ามกับ Immutate โดยสิ้นเชิง สถานะการณืสมมุติ เช่น มี Array 1 ชุด ส่งเข้าไปใน หนึ่ง function เพื่อทำการวนลูป push() การทำแบบนี้จะส่งผลถึง state ต้นทางด้วย ตัวอย่าง Array mutation [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods)
-4. Pure function คืออะไร ? เป็นผลลัพธ์ของการทำ Immutate state ฟังก์ชั่นใดก็ตามที่ทำลักษณะนี้ได้ ถือว่าเป็น Pure function ไม่มีสิ่งเจือปน ไม่ยุ่งกับ state ก่อนหน้า ไม่เปลี่ยน แต่สร้าง state ใหม่ที่เพิ่ม เติม หรือ ลดจาก state เก่า
+4. Pure function คืออะไร ? เป็นผลลัพธ์ของการทำ Immutate state ฟังก์ชั่นใดก็ตามที่ทำลักษณะนี้ได้ ถือว่าเป็น Pure function ไม่มีสิ่งเจือปน ไม่ยุ่งกับ state ก่อนหน้า ไม่เปลี่ยน แต่สร้าง state ใหม่ที่เพิ่ม เติม หรือ ลดจาก state เก่า ดังนั้น Pure function จะไม่ยุ่งกับ สภาวะแวดล้อมข้างนอก ที่ก่อให้เกิด side effect ต่อตัวเอง และผู้อื่น
 5. First class function คือ feature ที่สนับสนุนให้ฟังก์ชั่น เป็นพลเมืองอันดับหนึ่ง เทียบเท่ากับ Variable ในภาษานั้นๆ ดังนั้น เราสามารถจับ function เข้าไปเป็นตัวแปรได้ เช่น `const a = function () {} or const a = () => {}`
 6. Higher order function คือ เราสามารถส่งฟังก์ชั่น เข้าไปเป็นส่วน Argument ของฟังก์ชั่นอื่นได้ และ return function ออกมา
 
