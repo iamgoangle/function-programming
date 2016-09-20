@@ -15,6 +15,7 @@ Learning about function programming via JS language
 กฏของ Reducer คือ We don't mutate the state (Reducers are just pure functions that take the previous state and an action, and return the next state. Remember to return new state objects) และ We return the previous state in the default case
 
 ดังนั้นตอนนี้ มีเรื่องที่ต้องศึกษา ดังนี้
+
 1. Mutable
 2. Immutable
 3. Imperative Programming
