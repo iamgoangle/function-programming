@@ -20,7 +20,7 @@ Learning about function programming via JS language
 2. Immutable
 3. Imperative Programming
 4. Functional Programming
-5. Pure Function
+5. *Pure Function*
 6. First class function
 7. Higher order function
 
