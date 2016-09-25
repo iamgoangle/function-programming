@@ -4,7 +4,7 @@ Learning about function programming via JS language
 # สารบัญ
 1. [ความเป็นมา](https://github.com/iamgoangle/functional-programming#ความเป็นมา)
 2. [หัวใจหลักของ Functional Programming](https://github.com/iamgoangle/functional-programming#หัวใจหลักของ-functional-programming)
-3. [Map / Filter / Reduce](https://github.com/iamgoangle/functional-programming#Map / Filter / Reduce)
+3. [Map / Filter / Reduce](https://github.com/iamgoangle/functional-programming#map--filter--reduce)
 
 # ความเป็นมา
 
