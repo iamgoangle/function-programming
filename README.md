@@ -39,9 +39,47 @@ Learning about function programming via JS language
 5. First class function คือ feature ที่สนับสนุนให้ฟังก์ชั่น เป็นพลเมืองอันดับหนึ่ง เทียบเท่ากับ Variable ในภาษานั้นๆ ดังนั้น เราสามารถจับ function เข้าไปเป็นตัวแปรได้ เช่น `const a = function () {} or const a = () => {}`
 6. Higher order function คือ เราสามารถส่งฟังก์ชั่น เข้าไปเป็นส่วน Argument ของฟังก์ชั่นอื่นได้ และ return function ออกมา
 
+## Pure function?
+- เมื่อเราส่ง input ให้กับ function ชุดหนึ่งเข้าไป เราจะได้ผลลัพธ์นั้นมาเสมอ ไม่ว่าจะเรียกกี่ครั้งก็ตาม
+```javascript
+// not-pure function
+var tempArray = [1, 2, 3, 4, 5];
+tempArray.splice(0, 1); // 2, 3, 4, 5
+tempArray.splice(0, 1); // 3, 4, 5
+
+// จะเห็นได้ว่า การเรียกทุกครั้ง ได้ผลลัพธ์ ไม่เหมือนเดิม แล้วถ้าลองแบบนี้หล่ะ
+
+var tempArray = [1, 2, 3, 4, 5];
+tempArray.slice(0, 1) // [1]
+tempArray.slice(0, 1) // [1]
+
+// tempArray ยังคงมีค่า [1, 2, 3, 4, 5]
+
+// แบบนี้จึงเป็น pure function ไม่ยุ่งกับ state เดิม แต่สร้าง state ใหม่มาเอง
+```
+
 ## Map / Filter / Reduce
-ทั้งสามตัวเป็นการสร้าง state ใหม่โดยไม่ยุ่งกับผลลัพธ์เดิม
+ทั้งสามตัวเป็นการสร้าง state ใหม่โดยไม่ยุ่งกับผลลัพธ์เดิม immutable function
 [https://github.com/iamgoangle/js-map-filter-reduce](https://github.com/iamgoangle/js-map-filter-reduce)
+
+## First class function
+ECMAScript อนุญาติให้ function, object นิยามเป็นตัวแปรได้
+
+```javascript
+var test = function () {
+	console.log('test');
+}
+
+function x () {
+	console.log('x');
+}
+
+var y = x();
+```
+
+## Higher order function
+การที่ JS อนุญาติให้รับ function อื่นมาเป็น parameter ของฟังก์ชันเราได้
+
 
 # Referrences
 1. [https://medium.com/funk-tional/hello-functional-programming-eacb0091a53c#.4zhercqrm](https://medium.com/funk-tional/hello-functional-programming-eacb0091a53c#.4zhercqrm)
