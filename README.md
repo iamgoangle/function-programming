@@ -1,6 +1,11 @@
 # functional-programming
 Learning about function programming via JS language
 
+# สารบัญ
+1. [ความเป็นมา](https://github.com/iamgoangle/functional-programming#ความเป็นมา)
+2. [หัวใจหลักของ Functional Programming](https://github.com/iamgoangle/functional-programming#หัวใจหลักของ-functional-programming)
+3. [Map / Filter / Reduce](https://github.com/iamgoangle/functional-programming#Map / Filter / Reduce)
+
 # ความเป็นมา
 
 เริ่มแรกเดิมทียังไม่รู้จัก FP หรือ Functional Programming จนมาจับ React JS และจำเป็นต้องใช้ Redux ในการจัดการ State
@@ -24,8 +29,6 @@ Learning about function programming via JS language
 6. First class function
 7. Higher order function
 
-# สรุป
-
 ## หัวใจหลักของ Functional Programming
 1. จำนวน Output ของ function จะสอดคล้องกับจำนวน Input เสมอ และต้องมีอย่างน้อย 1 parameter
 
@@ -35,6 +38,10 @@ Learning about function programming via JS language
 4. Pure function คืออะไร ? เป็นผลลัพธ์ของการทำ Immutable state ฟังก์ชั่นใดก็ตามที่ทำลักษณะนี้ได้ ถือว่าเป็น Pure function ไม่มีสิ่งเจือปน ไม่ยุ่งกับ state ก่อนหน้า ไม่เปลี่ยน แต่สร้าง state ใหม่ที่เพิ่ม เติม หรือ ลดจาก state เก่า ดังนั้น Pure function จะไม่ยุ่งกับ สภาวะแวดล้อมข้างนอก ที่ก่อให้เกิด side effect ต่อตัวเอง และผู้อื่น
 5. First class function คือ feature ที่สนับสนุนให้ฟังก์ชั่น เป็นพลเมืองอันดับหนึ่ง เทียบเท่ากับ Variable ในภาษานั้นๆ ดังนั้น เราสามารถจับ function เข้าไปเป็นตัวแปรได้ เช่น `const a = function () {} or const a = () => {}`
 6. Higher order function คือ เราสามารถส่งฟังก์ชั่น เข้าไปเป็นส่วน Argument ของฟังก์ชั่นอื่นได้ และ return function ออกมา
+
+## Map / Filter / Reduce
+ทั้งสามตัวเป็นการสร้าง state ใหม่โดยไม่ยุ่งกับผลลัพธ์เดิม
+[https://github.com/iamgoangle/js-map-filter-reduce](https://github.com/iamgoangle/js-map-filter-reduce)
 
 # Referrences
 1. [https://medium.com/funk-tional/hello-functional-programming-eacb0091a53c#.4zhercqrm](https://medium.com/funk-tional/hello-functional-programming-eacb0091a53c#.4zhercqrm)
